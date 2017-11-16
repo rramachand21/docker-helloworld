@@ -40,6 +40,8 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 # Expose ports
 EXPOSE 80
 
+HEALTHCHECK --interval=3s --timeout=999999s CMD curl --fail http://localhost:8091/ || exit 1
+
 # Set the default command to execute
 # when creating a new container
 CMD ["nginx"]
