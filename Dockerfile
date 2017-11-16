@@ -40,7 +40,7 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 # Expose ports
 EXPOSE 80
 
-HEALTHCHECK --interval=3s --timeout=300s CMD tail -f /dev/null
+HEALTHCHECK --interval=3s --timeout=1s CMD tail -f /dev/null
 
 # Set the default command to execute
 # when creating a new container
